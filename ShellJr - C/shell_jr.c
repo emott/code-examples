@@ -1,9 +1,3 @@
-/*
-Eric Mott
-113403279
-emott
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -46,8 +40,8 @@ int main(){
       exit(0);
     }else if(strcmp(argv[0], "cd") == 0){
       if(chdir(argv[1]) == -1){
-	printf("Cannot change to directory %s\n", argv[1]);
-	fflush(stdout);
+	     printf("Cannot change to directory %s\n", argv[1]);
+	 fflush(stdout);
       }
     }else{
       

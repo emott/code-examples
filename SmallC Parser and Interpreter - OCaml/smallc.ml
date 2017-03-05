@@ -1,13 +1,4 @@
-(*  
-	CMSC330 Fall 2016
-	This ocaml code reads a C code and properly indents it
-	
-	compile for debug:
-		ocamlc -g Str.cma smallc.ml 
-	
-	@author: Anwar Mamat
-	@date: 10/15/2016
-*)
+
 
 #load "str.cma"
 
@@ -15,7 +6,7 @@ type data_type =
 	|Type_Int
 ;;
 
-(* Use this as your abstract syntax tree *)
+(* abstract syntax tree *)
 
 type ast =
   | Id of string
@@ -485,7 +476,7 @@ and parse_primaryExp lst =
   |_-> raise (IllegalExpression "parse_primaryExp")
 
 
-(* --------------------End of my code----------------------*)
+(* --------------------End of Parser----------------------*)
 
 exception Error of int ;;
 
@@ -530,7 +521,8 @@ let print_token_list tokens =
 	print_endline ""
 ;;
 	
-(* -------------- Your Code Here ----------------------- *)
+(* -------------- Pretty Print ----------------------- *)
+(*  This reads a C code and properly indents it  *)
 
 let rec print_underscore pos = 
   match pos with
@@ -585,16 +577,3 @@ and aux_print_list pos x =
 
 (* ----------------------------------------------------- *)
 
-
-(*
-you can test your parser and pretty_print with following code 
-*)
-
-(*
-
-let prg1 = read_lines "main.c";;
-let code = List.fold_left (fun x y->x^y) "" prg1;;	
-let t = tokenize code;;
-let (a,b)=parse_Function t;;
-
-*)
